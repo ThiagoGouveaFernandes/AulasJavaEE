@@ -26,6 +26,6 @@ public class PageBean implements Serializable{
 	public String inverter() {
 		flash.put("resultado", palavra.reverse());
 		
-		return "result";
+		return "result?faces-redirect=true";
 	}
 }
