@@ -10,22 +10,31 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class PageBean implements Serializable{
-	private StringBuilder palavra;
+	String palavra;
+	String invertido;
 
-	public StringBuilder getPalavra() {
+	public String getPalavra() {
 		return palavra;
 	}
 
-	public void setPalavra(StringBuilder palavra) {
+	public void setPalavra(String palavra) {
 		this.palavra = palavra;
+	}
+	
+	public String getInvertido() {
+		return invertido;
+	}
+
+	public void setInvertido(String invertido) {
+		this.invertido = invertido;
 	}
 
 	@Inject
 	private Flash flash;
 	
 	public String inverter() {
-		flash.put("resultado", palavra.reverse());
-		
-		return "result?faces-redirect=true";
+		String invertido = new StringBuilder(palavra).reverse().toString();
+		flash.put("resultado", invertido);
+		return "result";
 	}
 }
