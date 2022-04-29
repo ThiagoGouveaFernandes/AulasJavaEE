@@ -83,7 +83,7 @@ public class CadastroBean implements Serializable{
 				str += ",";
 			}
 			
-			str += linguagem;
+			str += Linguagem.LINGUAGENS[linguagem].getNome();
 			first = false;
 		}
 		
