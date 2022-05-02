@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	lang="pt-br">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-	<h:head>
-		<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"/>
-		
-		<title>Numero Aleatorios</title>
-		
-	</h:head>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Gerador de Números Aleatórios</title>
+</h:head>
 
-	<body>
-		<h:form>
-			<h:panelGrid columns="2">
-				<f:facet name="header">Gerador de numeros aleatorios</f:facet>
-				
-				Linguagens de programação:
-				<h:selectManyCheckbox value="#{num}">
-					<f:selectItems value="#{cadastro.listaLinguagens}" var="l" itemValue="#{l.id}" itemLabel="#{l.nome}"/>
-				</h:selectManyCheckbox>
-				
-				<h:selectOneMenu value="#{num.}">
-				
-				</h:selectOneMenu>
-			</h:panelGrid>
+<body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="header">Gerador de Números Aleatórios</f:facet>
+		
+			Quantidade de números:
+			<h:selectOneMenu value="#{PageBean.qtde}">
+				<f:selectItem itemValue="1" itemLabel="1" />
+				<f:selectItem itemValue="2" itemLabel="2" />
+				<f:selectItem itemValue="3" itemLabel="3" />
+				<f:selectItem itemValue="4" itemLabel="4" />
+				<f:selectItem itemValue="5" itemLabel="5" />
+			</h:selectOneMenu>
+		
+			Valor mínimo:
+			<h:inputText value="#{PageBean.min}" size="4" />
 			
-			<h:commandButton action="info" value="Cadastrar" />
-		</h:form>
-	</body>
+			Valor máximo:
+			<h:inputText value="#{PageBean.max}" size="4" />
+		</h:panelGrid>
+
+		<h:commandButton value="Gerar" action="#{PageBean.gerar}" />
+		<hr />
+
+		<h:selectManyListbox rendered="#{PageBean.numeros.size() > 0}" style="width: 140px;" readonly="true">
+			<f:selectItems value="#{PageBean.numeros}" var="n" itemLabel="#{n}" />
+		</h:selectManyListbox>
+	</h:form>
+</body>
 </html>
