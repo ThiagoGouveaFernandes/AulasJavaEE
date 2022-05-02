@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+
+	<h:head>
+		<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		
+		<title>Formulario de Cadastro</title>
+		
+	</h:head>
+
+	<body>
+		<h:form>
+			<h:panelGrid columns="2">
+				<f:facet name="header">Dados Pessoais</f:facet>
+				
+				Nome:
+				<h:inputText value="#{PageBean.pessoa.nome}" />
+				E-mail:
+				<h:inputText value="#{PageBean.pessoa.email}" />
+				Data de Nascimento:
+				<h:inputText value="#{PageBean.pessoa.dtNascimento}" />
+				Rua:
+				<h:inputText value="#{PageBean.endereco.rua}" />
+				Número:
+				<h:inputText value="#{PageBean.endereco.num}" />
+				Complemento:
+				<h:inputText value="#{PageBean.endereco.complemento}" />
+				Bairro:
+				<h:inputText value="#{PageBean.endereco.bairro}" />
+				CEP:
+				<h:inputText value="#{PageBean.endereco.cep}" />
+				Cidade:
+				<h:inputText value="#{PageBean.endereco.cidade}" />
+				Estado:
+				<h:selectOneMenu value="#{PageBean.pessoa.enderecoResidencial.estado.sigla}">
+					<f:selectItem itemValue="Selecione" noSelectionOption="true"/>
+					<f:selectItems value="#{PageBean.estados}" var="l" itemValue="#{l.sigla}" itemLabel="#{l.sigla} - #{l.nome}"/>
+				</h:selectOneMenu> 
+				Telefone Residencial:
+				<h:panelGroup>
+					<h:inputText value="#{PageBean.pessoa.telefoneResidencial.ddd}" />
+					<h:inputText value="#{PageBean.pessoa.telefoneResidencial.numero}" />
+				</h:panelGroup>
+				Telefone Celular:
+				<h:panelGroup>
+					<h:inputText value="#{PageBean.pessoa.telefoneCelular.ddd}" />
+					<h:inputText value="#{PageBean.pessoa.telefoneCelular.numero}" />
+				</h:panelGroup>
+			</h:panelGrid>
+			
+			<h:commandButton action="form2" value="Próximo" />
+		</h:form>
+	</body>
+</html>
