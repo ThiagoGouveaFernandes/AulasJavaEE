@@ -20,41 +20,41 @@
 				<f:facet name="header">Dados Pessoais</f:facet>
 				
 				Nome:
-				<h:inputText value="#{PageBean.pessoa.nome}" />
+				<h:inputText value="#{pageBean.pessoa.nome}" />
 				E-mail:
-				<h:inputText value="#{PageBean.pessoa.email}" />
+				<h:inputText value="#{pageBean.pessoa.email}" />
 				Data de Nascimento:
-				<h:inputText value="#{PageBean.pessoa.dtNascimento}" />
+				<h:inputText value="#{pageBean.pessoa.dtNascimento}" />
 				Rua:
-				<h:inputText value="#{PageBean.endereco.rua}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoResidencial.rua}" />
 				Número:
-				<h:inputText value="#{PageBean.endereco.num}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoResidencial.num}" />
 				Complemento:
-				<h:inputText value="#{PageBean.endereco.complemento}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoResidencial.estado.cidade}" />
 				Bairro:
-				<h:inputText value="#{PageBean.endereco.bairro}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoResidencial.bairro}" />
 				CEP:
-				<h:inputText value="#{PageBean.endereco.cep}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoResidencial.cep}" />
 				Cidade:
-				<h:inputText value="#{PageBean.endereco.cidade}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoResidencial.cidade}" />
 				Estado:
-				<h:selectOneMenu value="#{PageBean.pessoa.enderecoResidencial.estado.sigla}">
+				<h:selectOneMenu value="#{pageBean.pessoa.enderecoResidencial.estado.sigla}">
 					<f:selectItem itemValue="Selecione" noSelectionOption="true"/>
-					<f:selectItems value="#{PageBean.estados}" var="l" itemValue="#{l.sigla}" itemLabel="#{l.sigla} - #{l.nome}"/>
+					<f:selectItems value="#{pageBean.estados}" var="l" itemValue="#{l.sigla}" itemLabel="#{l.sigla} - #{l.nome}"/>
 				</h:selectOneMenu> 
 				Telefone Residencial:
 				<h:panelGroup>
-					<h:inputText value="#{PageBean.pessoa.telefoneResidencial.ddd}" />
-					<h:inputText value="#{PageBean.pessoa.telefoneResidencial.numero}" />
+					<h:inputText value="#{pageBean.pessoa.telefoneResidencial.ddd}" />
+					<h:inputText value="#{pageBean.pessoa.telefoneResidencial.numero}" />
 				</h:panelGroup>
 				Telefone Celular:
 				<h:panelGroup>
-					<h:inputText value="#{PageBean.pessoa.telefoneCelular.ddd}" />
-					<h:inputText value="#{PageBean.pessoa.telefoneCelular.numero}" />
+					<h:inputText value="#{pageBean.pessoa.telefoneCelular.ddd}" />
+					<h:inputText value="#{pageBean.pessoa.telefoneCelular.numero}" />
 				</h:panelGroup>
 			</h:panelGrid>
 			
-			<h:commandButton action="form2" value="Próximo" />
+			<h:commandButton action= "form2" value="Próximo" />
 		</h:form>
 	</body>
 </html>

@@ -1,7 +1,5 @@
 package br.com.senai.thiagogouvea.application.model;
 
-import javax.inject.Named;
-
 public class Pessoa {
 	private String nome;
 	private String email;

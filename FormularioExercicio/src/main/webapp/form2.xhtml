@@ -20,32 +20,34 @@
 				<f:facet name="header">Dados Comerciais</f:facet>
 				
 				Nome da Empresa:
-				<h:inputText value="#{PageBean.pessoa.nomeEmpresa}" />
+				<h:inputText value="#{pageBean.pessoa.nomeEmpresa}" />
 				Cargo:
-				<h:inputText value="#{PageBean.pessoa.cargo}" />
+				<h:inputText value="#{pageBean.pessoa.cargo}" />
 				Salário:
-				<h:inputText value="#{PageBean.pessoa.salario}" />
+				<h:inputText value="#{pageBean.pessoa.salario}">
+					<f:convertNumber locale="pt_BR"/>
+				</h:inputText>
 				Rua:
-				<h:inputText value="#{PageBean.endereco.rua}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoComercial.rua}" />
 				Número:
-				<h:inputText value="#{PageBean.endereco.num}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoComercial.num}" />
 				Complemento:
-				<h:inputText value="#{PageBean.endereco.complemento}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoComercial.complemento}" />
 				Bairro:
-				<h:inputText value="#{PageBean.endereco.bairro}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoComercial.bairro}" />
 				CEP:
-				<h:inputText value="#{PageBean.endereco.cep}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoComercial.cep}" />
 				Cidade:
-				<h:inputText value="#{PageBean.endereco.cidade}" />
+				<h:inputText value="#{pageBean.pessoa.enderecoComercial.cidade}" />
 				Estado:
-				<h:selectOneMenu value="#{PageBean.pessoa.enderecoResidencial.estado.sigla}">
+				<h:selectOneMenu value="#{pageBean.pessoa.enderecoResidencial.estado.sigla}">
 					<f:selectItem itemValue="Selecione" noSelectionOption="true"/>
-					<f:selectItems value="#{PageBean.estados}" var="l" itemValue="#{l.sigla}" itemLabel="#{l.sigla} - #{l.nome}"/>
+					<f:selectItems value="#{pageBean.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}"/>
 				</h:selectOneMenu> 
 				Telefone Comercial:
 				<h:panelGroup>
-					<h:inputText value="#{PageBean.pessoa.telefoneComercial.ddd}" />
-					<h:inputText value="#{PageBean.pessoa.telefoneComercial.numero}" />
+					<h:inputText value="#{pageBean.pessoa.telefoneComercial.ddd}" />
+					<h:inputText value="#{pageBean.pessoa.telefoneComercial.numero}" />
 				</h:panelGroup>
 			</h:panelGrid>
 			

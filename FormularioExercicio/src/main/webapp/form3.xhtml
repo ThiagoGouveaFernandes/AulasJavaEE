@@ -19,8 +19,8 @@
 			<h:panelGrid columns="2">
 				<f:facet name="header">Areas de Interesse</f:facet>
 				
-				<h:selectManyCheckbox value="#{PageBean.pessoa.Interesse}">
-					<f:selectItems value="#{PageBean.interesse}" var="e" itemValue="#{e.id}" itemLabel="#{e.area}"/>
+				<h:selectManyCheckbox value="#{pageBean.pessoa.interesses}" layout="pageDirection">
+					<f:selectItems value="#{pageBean.interesse}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"/>
 				</h:selectManyCheckbox>
 			</h:panelGrid>
 			

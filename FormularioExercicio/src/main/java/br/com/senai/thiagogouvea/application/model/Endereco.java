@@ -1,7 +1,5 @@
 package br.com.senai.thiagogouvea.application.model;
 
-import br.com.senai.thiagogouvea.application.estado.InicializacaoDeConstantes;
-
 public class Endereco {
 	private String rua;
 	private int num;

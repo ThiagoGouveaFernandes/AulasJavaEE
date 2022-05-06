@@ -16,7 +16,8 @@ import br.com.senai.thiagogouvea.application.model.Interesse;
 import br.com.senai.thiagogouvea.application.model.Pessoa;
 import br.com.senai.thiagogouvea.application.model.Telefone;
 
-@Named("cadastro")
+@SuppressWarnings("serial")
+@Named
 @SessionScoped
 public class PageBean implements Serializable {
 	private Pessoa pessoa;
