@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+
+	<h:head>
+		<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		
+		<title>Formulario de Cadastro</title>
+		
+	</h:head>
+
+	<h:body>
+		<h:outputStylesheet library="css" name="styles.css"/>
+		
+		<h:panelGrid columns="2">
+				<f:facet name="header">Formulario</f:facet>
+				
+				data:
+				<h:inputText value="#{tabela.despesa.data}"/>
+				
+				Descrição:
+				<h:inputText value="#{tabela.despesa.descricao}"/>
+				
+				Valor:
+				<h:inputText value="#{tabela.despesa.valor}"/>
+		</h:panelGrid>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		<h:form>
+			<h:panelGroup rendered="#{tabela.despesas.size() == 0}">
+				<h2>Não existe registro</h2>
+			</h:panelGroup>
+		
+			<h:panelGroup rendered="#{tabela.despesas.size() > 0}">
+				<table class="tabela">
+					<tr>
+						<th class="cabecalho" colspan="5"> Lista de Despesas</th>
+					</tr>
+					
+					<tr>
+						<th class="cabecalho"> id </th>
+						<th class="cabecalho"> Data </th>
+						<th class="cabecalho"> Descrição </th>
+						<th class="cabecalho"> Valor </th>
+						<th class="cabecalho"> Operação </th>
+					</tr>
+					
+					<ui:repeat var="d" varStatus="st" value="#{tabela.despesas}">
+						<tr>
+							<td class="colNumero"> #{st.index +1} </td>
+							
+							<td class="colDate"> 
+								<h:outputText value="#{tabela.data2}"></h:outputText>
+							</td>
+							
+							<td class="colDesc"> 
+								<h:outputText value="#{tabela.descricao2}"/>
+							 </td>
+							 
+							 <td class="colValor"> 
+								<h:outputText value="#{tabela.valor2}">
+									<f:convertNumber type="currency" locale="pt-br"/>
+								</h:outputText>
+							 </td>
+							 
+							 <td class="colop"> 
+								<h:panelGroup rendered="#{!d.edit}">
+									<h:commandLink action="#{tabela.editar(d)}" value="Alterar" />
+									<h:commandLink action="#{tabela.excluir(d)}" value="Excluir" />
+								</h:panelGroup>
+							 </td>
+						</tr>
+					</ui:repeat>
+				</table>
+			</h:panelGroup>
+			<br/>
+			
+			<h:commandButton action="#{tabela.inserir}" value="Inserir" />
+		</h:form>
+	</h:body>
+</html>
