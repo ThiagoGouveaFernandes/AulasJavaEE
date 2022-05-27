@@ -7,7 +7,7 @@ import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-import br.com.senai.thiagogouvea.application.model.Despesas;
+import br.com.senai.thiagogouvea.jpa.model.Despesas;
 
 @SuppressWarnings("serial")
 @Named("tabela")

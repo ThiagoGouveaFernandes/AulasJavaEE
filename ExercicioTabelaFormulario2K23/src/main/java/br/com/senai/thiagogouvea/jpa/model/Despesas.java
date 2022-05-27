@@ -1,7 +1,16 @@
-package br.com.senai.thiagogouvea.application.model;
+package br.com.senai.thiagogouvea.jpa.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Despesas {
+	
+	@Id
+	@GeneratedValue
+	private Integer id;
+	
 	private String data;
 	private String descricao;
 	private Double valor;
@@ -32,6 +41,12 @@ public class Despesas {
 		this.edit = edit;
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	public Despesas(String data, String descricao, Double valor) {
 		this.data = data;

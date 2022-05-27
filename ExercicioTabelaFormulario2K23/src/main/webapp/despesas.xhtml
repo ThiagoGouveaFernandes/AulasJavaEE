@@ -29,19 +29,19 @@
 					<h:column>
 						<h:outputText value="Data:"></h:outputText>
 						<br/>
-						<h:inputText value="#{tabela.date}" id="data" required="Campo obrigatório"></h:inputText>
+						<h:inputText value="#{form.despesas.data}" id="data" required="Campo obrigatório"></h:inputText>
 					</h:column>
 			
 					<h:column>
 						<h:outputText value="Descrição:"></h:outputText>
 						<br/>
-						<h:inputText value="#{tabela.desc}" id="descricao" required="Campo obrigatório"></h:inputText>
+						<h:inputText value="#{form.despesas.descricao}" id="descricao" required="Campo obrigatório"></h:inputText>
 					</h:column>
 			
 					<h:column>
 						<h:outputText value="Valor:"></h:outputText>
 						<br/>
-						<h:inputText value="#{tabela.valor2}" id="valor" required="Campo obrigatório"></h:inputText>
+						<h:inputText value="#{form.despesas.valor}" id="valor" required="Campo obrigatório"></h:inputText>
 					</h:column>
 	
 				</h:panelGrid>
@@ -102,6 +102,10 @@
 				</table>
 			</h:panelGroup>
 			<br/>
+			
+			<h:commandButton value="Gravar">
+				<f:ajax listener="#{form.gravar}" execute="@form" render="@form" />
+			</h:commandButton>
 			
 			<h:commandButton action="#{tabela.inserir(tabela.date,tabela.desc,tabela.valor2)}" value="Inserir" />
 		</h:form>
