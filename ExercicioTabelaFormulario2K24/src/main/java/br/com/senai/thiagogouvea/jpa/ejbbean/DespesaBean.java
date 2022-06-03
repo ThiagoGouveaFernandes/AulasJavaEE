@@ -1,5 +1,7 @@
 package br.com.senai.thiagogouvea.jpa.ejbbean;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -26,5 +28,9 @@ public class DespesaBean {
 	
 	public Despesas carregar(int id) {
 		return em.find(Despesas.class, id);
+	}
+	
+	public List<Despesas> listar() {
+		return em.createQuery("SELECT c FROM Cliente c", Despesas.class).getResultList();
 	}
 }

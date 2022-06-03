@@ -1,8 +1,19 @@
 package br.com.senai.thiagogouvea.jpa.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+
+
 
 @Entity
 public class Despesas {
@@ -15,6 +26,11 @@ public class Despesas {
 	private String descricao;
 	private Double valor;
 	private Boolean edit;
+
+	
+	private List<Produto> produtos;
+	
+	
 	
 	public String getData() {
 		return data;
@@ -58,5 +74,13 @@ public class Despesas {
 		this.data = data;
 		this.descricao = descricao;
 		this.valor = valor;
+	}
+	
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
 }
