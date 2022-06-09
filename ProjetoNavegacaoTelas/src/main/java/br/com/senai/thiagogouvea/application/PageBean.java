@@ -20,6 +20,7 @@ public class PageBean implements Serializable{
 		this.page = page;
 	}
 	
+	//Metodo responsavel por retornar a pagina necessaria
 	public String goTo() {
 		if("a".equals(page)) {
 			return "pagea";
