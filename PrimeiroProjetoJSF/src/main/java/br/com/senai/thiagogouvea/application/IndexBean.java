@@ -10,6 +10,7 @@ import javax.inject.Named;
 @RequestScoped
 public class IndexBean implements Serializable{
 	
+	//Metodo responsavel de retornar uma mensagem
 	public String getMensagem() {
 		return "Texto vindo do Bean";
 	}
