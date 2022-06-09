@@ -23,6 +23,7 @@ public class PageBean implements Serializable{
 	@Inject
 	private Flash flash;
 	
+	//Metodo responsavel por retornar o nome do usuario
 	public String processar() {
 		flash.put("nomeDoUsuario", nome);
 		
