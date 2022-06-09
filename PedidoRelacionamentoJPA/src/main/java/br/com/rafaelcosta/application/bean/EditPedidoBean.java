@@ -19,6 +19,7 @@ import br.com.rafaelcosta.application.model.Produto;
 @RequestScoped
 public class EditPedidoBean implements Serializable {
 	
+	//Essa anotação faz a conexão com o banco de dados criando suas tabelas
 	@EJB
 	private PedidoBean pedidoBean;
 	
@@ -34,6 +35,7 @@ public class EditPedidoBean implements Serializable {
 	private Integer selectedClienteId;
 	private Integer[] selectedProdutosIds;
 	
+	//Essa anotação serve para iniciar os objetos na tela do ususario
 	@PostConstruct
 	public void init() {
 		clientes = clienteBean.listar();
