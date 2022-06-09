@@ -12,9 +12,11 @@ import javax.inject.Named;
 @ApplicationScoped
 public class FormatterBean implements Serializable {
 
+	//O Locale entrega para nós o lugar e sua lingua
 	private static final Locale LOCALE_BR = new Locale("pt", "BR");
 	
 	public String formatarMoeda(double valor) {
+		//NumberFormat transforma o valor na modeda do local especificado do locale
 		NumberFormat nf = NumberFormat.getCurrencyInstance(LOCALE_BR);
 		return nf.format(valor);
 	}
