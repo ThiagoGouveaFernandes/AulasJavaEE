@@ -8,10 +8,11 @@ import javax.persistence.PersistenceContext;
 
 import br.com.rafaelcosta.application.model.Cliente;
 
-
-@Stateless
+//Essa anotação determina o tempo de vida do EJB
+@Stateless 
 public class ClienteBean {
 
+	//Essa anotação armazena as entidades que estão sendo criadas e gerenciadas
 	@PersistenceContext
 	private EntityManager em;
 	
