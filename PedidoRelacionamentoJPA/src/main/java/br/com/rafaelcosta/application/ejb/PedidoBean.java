@@ -30,14 +30,14 @@ public class PedidoBean {
 		
 		Pagamento pagamento = new Pagamento();
 		pagamento.setTipoPagto(tipoPagamento);
-		em.persist(pagamento);
+		em.persist(pagamento);//grava as informações no banco de dados
 		
 		pedido.setPagamento(pagamento);
 	}
 	
 	public void excluir(Integer pedidoId) {
 		Pedido pedido = em.find(Pedido.class, pedidoId);
-		em.remove(pedido);
+		em.remove(pedido);//remove as informações do banco de dados
 	}
 	
 	public void cadastrar(Integer clienteId, Integer[] produtosIds) throws Exception {
