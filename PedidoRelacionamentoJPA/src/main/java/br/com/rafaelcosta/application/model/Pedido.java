@@ -28,11 +28,13 @@ public class Pedido implements Serializable {
 	@Column(name = "valor_total")
 	private Double valorTotal;
 	
+	//Essa anotação transforma a coluna abaixo para o formato date
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private Date data;
 
 	@OneToOne
+	//Essa anotação esta atribuindo o nome da tabela que recebe a chave estrangeira
 	@JoinColumn(name = "pagamento_id")
 	private Pagamento pagamento;
 	
@@ -41,6 +43,7 @@ public class Pedido implements Serializable {
 	private Cliente cliente;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
+	//Essa anotação vai nomear uma terceira tabela que vai receber 2 chaves estrangeiras
 	@JoinTable(name = "pedido_produto", 
 		joinColumns = @JoinColumn(name = "pedido_id"),
 		inverseJoinColumns = @JoinColumn(name = "produto_id"))
