@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Pagamento implements Serializable {
+	
+	//O enum facilita o manuseio de constantes nomeadas
 	public enum TipoPagamento {
 		CARTAO_CREDITO,
 		BOLETO
@@ -21,10 +23,12 @@ public class Pagamento implements Serializable {
 	@GeneratedValue
 	private Integer id;
 	
+	//Essa anotação escolhe o nome da coluna
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo_pagto", length = 20, nullable = false)
 	private TipoPagamento tipoPagto;
 	
+	//Essa anotação determina a cardinalidade entre duas tabelas
 	@OneToOne(mappedBy = "pagamento")
 	private Pedido pedido;
 	
