@@ -21,8 +21,8 @@ public class FormBean implements Serializable{
 	@EJB
 	private DespesaBean despesaBean;
 
-	@Inject
-	private FacesContext context;
+//	@Inject
+//	private FacesContext context;
 	
 	private UIComponent searchInputText;
 	
@@ -38,15 +38,15 @@ public class FormBean implements Serializable{
 		}		
 	}
 	
-	public void pesquisar(AjaxBehaviorEvent event) {
-		despesas = despesaBean.carregar(despesaId);
-		
-		if(despesas == null) {
-			context.addMessage(searchInputText.getClientId(context),
-					new FacesMessage("Despesas n�o encontrada"));
-		}
-		despesaId = null;		
-	}
+//	public void pesquisar(AjaxBehaviorEvent event) {
+//		despesas = despesaBean.carregar(despesaId);
+//		
+//		if(despesas == null) {
+//			context.addMessage(searchInputText.getClientId(context),
+//					new FacesMessage("Despesas n�o encontrada"));
+//		}
+//		despesaId = null;		
+//	}
 	
 	public void excluir(AjaxBehaviorEvent event) {
 		despesaBean.excluir(despesas);
