@@ -42,7 +42,7 @@ public class EditPedidoBean implements Serializable {
 		produtos = produtoBean.listar();
 	}
 	
-	//Metodo responsavel por 
+	 
 	public String cadastrarPedido() throws Exception {
 		pedidoBean.cadastrar(selectedClienteId, selectedProdutosIds);	
 		return "pedidos?faces-redirect=true";
