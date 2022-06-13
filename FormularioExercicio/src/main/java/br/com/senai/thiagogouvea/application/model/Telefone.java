@@ -1,6 +1,7 @@
 package br.com.senai.thiagogouvea.application.model;
 
 public class Telefone {
+	//O enum facilita o manuseio de constantes nomeadas
 	enum Tipo{
 		FIXO, CELULAR;
 	}
