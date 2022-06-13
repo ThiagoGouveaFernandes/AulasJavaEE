@@ -15,8 +15,10 @@
 	</h:head>
 
 	<h:body>
+		<!--Linka a pagina ao arquivo css-->
 		<h:outputStylesheet library="css" name="styles.css"/>
 		
+		<!--Adiciona uma imagem a pagina-->
 		<h:panelGroup>
 			<h:graphicImage value="/resources/img/senai.png" />
 		</h:panelGroup>
@@ -29,19 +31,19 @@
 					<h:column>
 						<h:outputText value="Data:"></h:outputText>
 						<br/>
-						<h:inputText value="#{form.despesas.data}" id="data" required="Campo obrigatório"></h:inputText>
+						<h:inputText value="#{form.despesas.data}" id="data" required="Campo obrigatÃ³rio"></h:inputText>
 					</h:column>
 			
 					<h:column>
-						<h:outputText value="Descrição:"></h:outputText>
+						<h:outputText value="DescriÃ§Ã£o:"></h:outputText>
 						<br/>
-						<h:inputText value="#{form.despesas.descricao}" id="descricao" required="Campo obrigatório"></h:inputText>
+						<h:inputText value="#{form.despesas.descricao}" id="descricao" required="Campo obrigatÃ³rio"></h:inputText>
 					</h:column>
 			
 					<h:column>
 						<h:outputText value="Valor:"></h:outputText>
 						<br/>
-						<h:inputText value="#{form.despesas.valor}" id="valor" required="Campo obrigatório"></h:inputText>
+						<h:inputText value="#{form.despesas.valor}" id="valor" required="Campo obrigatÃ³rio"></h:inputText>
 					</h:column>
 	
 				</h:panelGrid>
@@ -50,7 +52,7 @@
 	
 		
 			<h:panelGroup rendered="#{tabela.despesas.size() == 0}">
-				<h2>Não existe registro</h2>
+				<h2>NÃ£o existe registro</h2>
 			</h:panelGroup>
 		
 			<h:panelGroup rendered="#{tabela.despesas.size() > 0}">
@@ -62,11 +64,12 @@
 					<tr>
 						<th class="cabecalho"> id </th>
 						<th class="cabecalho"> Data </th>
-						<th class="cabecalho"> Descrição </th>
+						<th class="cabecalho"> DescriÃ§Ã£o </th>
 						<th class="cabecalho"> Valor </th>
-						<th class="cabecalho"> Operação </th>
+						<th class="cabecalho"> OperaÃ§Ã£o </th>
 					</tr>
 					
+					<!--A tag "ui:repeat" repete os codigos dentro dela conforme o "varStatus"-->
 					<ui:repeat value="#{form.despesas}" var="d" varStatus="st">
 			
 						<tr>
@@ -113,9 +116,10 @@
 			</h:commandButton>
 		</h:form>
 		
+		<!--Esse script esta responsavel por pegar as informaÃ§Ãµes dos campos-->
 		<script type="text/javascript">
 			var data = document.getElementById("Data");
-			var descricao = document.getElementById("Descrição");
+			var descricao = document.getElementById("DescriÃ§Ã£o");
 			var valor = document.getElementById("Valor");
 			if()	
 		</script>
