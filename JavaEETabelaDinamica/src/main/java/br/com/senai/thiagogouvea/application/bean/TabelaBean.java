@@ -10,6 +10,7 @@ import javax.inject.Named;
 
 import br.com.senai.thiagogouvea.application.model.Despesas;
 
+//Essa anotação faz com que o java ignore um "erro" que ocorre na criação da classe
 @SuppressWarnings("serial")
 @Named("tabela")
 @SessionScoped
