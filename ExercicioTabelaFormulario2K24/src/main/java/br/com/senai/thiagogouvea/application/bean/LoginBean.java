@@ -13,11 +13,13 @@ public class LoginBean implements Serializable{
 	private String nome;
 	private String senha;
 	
+	//Essa anotação executa o metodo abaixo assim q essa classe for construida
 	@PostConstruct
 	public void onCreate() {
 		System.out.println("Bean criado");
 	}
 	
+	//Essa anotação executa o metodo abaixo assimq essa classe for destruida
 	@PreDestroy
 	public void onDestroy() {
 		System.out.println("Bean será Destruído");
