@@ -26,7 +26,7 @@ public class PedidoBean {
 	
 	public void pagar(Integer pedidoId, String tipo) {
 		TipoPagamento tipoPagamento = TipoPagamento.valueOf(tipo);
-		Pedido pedido = em.find(Pedido.class, pedidoId);
+		Pedido pedido = em.find(Pedido.class, pedidoId);//procura as informações no banco de dados com base no id do pedido
 		
 		Pagamento pagamento = new Pagamento();
 		pagamento.setTipoPagto(tipoPagamento);
