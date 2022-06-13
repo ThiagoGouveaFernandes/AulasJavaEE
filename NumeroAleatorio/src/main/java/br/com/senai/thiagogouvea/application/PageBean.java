@@ -18,8 +18,10 @@ public class PageBean implements Serializable {
 	private Integer min;
 	private Integer max;
 	
+	//Cria uma lista de numeros
 	private List<Integer> numeros = new ArrayList<>();
 
+	//Metodo responsavel por gerar os numeros aleatorios por meio de uma laço de repetilção
 	public String gerar() {
 		
 		for (int i = 0; i < qtde; i++) {
