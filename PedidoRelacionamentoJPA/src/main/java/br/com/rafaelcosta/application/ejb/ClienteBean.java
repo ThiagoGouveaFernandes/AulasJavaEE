@@ -16,6 +16,7 @@ public class ClienteBean {
 	@PersistenceContext
 	private EntityManager em;
 	
+	//Esse metodo é responsavel por trazer o resultado(dados) da tabela do banco de dados
 	public List<Cliente> listar() {
 		return em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
 	}
